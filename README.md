@@ -1,1 +1,3 @@
 #El archivo ".gitignore" contiene la lista de elementos que no se cargan al repositorio remoto y solo se mantienen el el repositorio local
+
+...
