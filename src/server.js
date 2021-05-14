@@ -10,14 +10,13 @@ const app=express();
 app.set('port',process.env.PORT || 3000);
 
 //Middlewares
-app.use(morgan('dev'))
+app.use(morgan('dev'));
+app.use(express.urlencoded({
+    extended:false
+}))
 
 //Variable globales
-app.get('/',(req,res)=>{
-    res.json({
-        Hello:'World'
-    })
-});
+app.use(require('./routes/index.routes'))
 
 //Rutas
 
