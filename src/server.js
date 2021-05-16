@@ -16,7 +16,9 @@ app.use(express.urlencoded({
 }))
 
 //Variable globales
-app.use(require('./routes/index.routes'))
+app.use(require('./routes/index.routes'));
+app.use(require('./routes/register.routes'));
+
 
 //Rutas
 
