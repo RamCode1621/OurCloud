@@ -1,9 +1,7 @@
 const indexCtrl=[]
 
 indexCtrl.indexOf=(req,res)=>{
-        res.json({
-            Hello:'World'
-        }) 
+        res.send('Welcome to OurCloud')
 }
 
 module.exports=indexCtrl;

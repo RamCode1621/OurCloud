@@ -1,5 +1,5 @@
 const {Schema, model}=require('mongoose');
-const bcrypt=require('bcryptjs')
+const bcrypt=require('bcryptjs');
 
 const userSchema=new Schema({
     name:{
@@ -18,14 +18,14 @@ const userSchema=new Schema({
     timestamps:true
 });
 
-userSchema.methods.encryptPassoword=async password=>{
+userSchema.methods.encryptPassoword=async(password)=>{
     const salt=await bycrypt.genSalt(10);
-    const password=await bcrypt.hash(password,salt);
-    return password;
+    const passwordEncrypt=await bcrypt.hash(password,salt);
+    return passwordEncrypt;
 }
 
 userSchema.methods,comparePassword=async function(password){
     await bcrypt.compare(password, this.password);
 }
 
-module.exports=model('user',userSchema);
+module.exports=model('User',userSchema,'Users');
